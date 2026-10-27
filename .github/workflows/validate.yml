@@ -1,0 +1,55 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  redaction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: publish gate (no hostnames, no credentials, ascii copy)
+        run: python3 tools/check-redaction.py .
+      - name: python syntax
+        run: python3 -m compileall -q tools examples
+      - name: shell syntax
+        run: for f in tools/*.sh; do bash -n "$f"; done
+      - name: tools are importable and their guards work
+        run: |
+          python3 - <<'PY'
+          import subprocess, sys, os
+          sys.path.insert(0, 'examples')
+          from vz_client import Client, Refused
+          os.environ['VZ_HOST'] = 'example.invalid'
+          os.environ['VZ_TOKEN'] = 'x' * 40
+          try:
+              Client().call('/environment/control/rest/stopenv', envName='demo')
+          except Refused:
+              print('verb guard: ok')
+          else:
+              sys.exit('verb guard FAILED to refuse a state-changing call')
+          PY
+      - name: spec parser runs offline against a stub
+        run: |
+          python3 - <<'PY'
+          import json, subprocess
+          spec = {"info": {"version": "0-test"},
+                  "servers": [{"url": "https://[hoster-api-host]/1.0/"}],
+                  "securityDefinitions": {"SessionAuth": {"type": "apiKey", "in": "query", "name": "session"}},
+                  "paths": {"/environment/control/rest/getenvs": {"post": {}},
+                            "/environment/control/rest/stopenv": {"post": {}}}}
+          open('/tmp/spec.json', 'w').write(json.dumps(spec))
+          out = subprocess.run(['python3', 'tools/spec-verbs.py', '--spec', '/tmp/spec.json',
+                                '--destructive'], capture_output=True, text=True, check=True)
+          assert 'stopenv' in out.stdout, out.stdout
+          assert 'getenvs' not in out.stdout, out.stdout
+          print('spec parser: ok')
+          PY

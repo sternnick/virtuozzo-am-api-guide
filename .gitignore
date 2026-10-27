@@ -1,0 +1,19 @@
+# Local clutter
+*.tsv
+*.json
+!package.json
+inventory.json
+capability.tsv
+.env
+.envrc
+__pycache__/
+*.pyc
+.DS_Store
+
+# Never, in any form
+token
+token.txt
+*.token
+secrets/
+*.pem
+*.key
