@@ -20,6 +20,9 @@ Rules this repository follows and asks you to follow:
   was using it.
 - Do not point this repository's tools at a platform you are not authorised to probe. The read-only
   calls still hit someone's control plane.
+- `tools/vz-capability-scan.sh` echoes the platform's own error strings, and those strings name user ids
+  and app ids. The matrix is fine for a colleague; scrub the `error` column before it goes into a public
+  issue or a chat log.
 
 ## What `tools/check-redaction.py` protects
 

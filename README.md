@@ -103,3 +103,6 @@ curl -s -G "https://app.${PLATFORM_DOMAIN}/1.0/marketplace/jps/rest/getenginever
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
+
+Everything here is generic on purpose. If you are reading this because you found a hostname in a URL and
+expected it to appear in these pages, it will not: the publish gate rejects it.
