@@ -77,7 +77,8 @@ config file: the token is read from `VZ_TOKEN` and never written to disk.
 | [docs/05-safety-and-destructive-verbs.md](docs/05-safety-and-destructive-verbs.md) | the auth-order trap, destructive verbs, guarding a fleet you did not build |
 | [docs/06-recipes.md](docs/06-recipes.md) | copy-paste read-only recipes: identity, inventory, billing, nodes, ACLs |
 | [tools/vz-api.sh](tools/vz-api.sh) | the safe client: query encoding, result decoding, verb guard |
-| [tools/vz-capability-scan.sh](tools/vz-capability-scan.sh) | classify every read-only method for one token |
+| [tools/preflight.sh](tools/preflight.sh) | the read-only pre-flight from docs/05 in one command |
+| [tools/vz-capability-scan.sh](tools/vz-capability-scan.sh) | classify every read-only method for one token (`--from-catalog` = all 128) |
 | [tools/spec-verbs.py](tools/spec-verbs.py) | extract the endpoint catalogue and its verb histogram from the vendor OpenAPI spec |
 | [tools/gen-scripts.py](tools/gen-scripts.py) | generate (or CI-verify) one wrapper per Platform API method |
 | [scripts/](scripts/README.md) | the generated suite: every documented method callable as `scripts/<group>/<sub>/<slug>.sh key=value` |

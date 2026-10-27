@@ -78,6 +78,9 @@ Guardrails that work:
 
 ## Pre-flight checklist before any automation touches a platform
 
+Or run `tools/preflight.sh`, which executes steps 1-4 (and the server clock) and exits
+non-zero if any of them fails.
+
 1. `getuserinfo` - which identity is this token, and is it the account you meant?
 2. `getenvs` - how many environments exist, and would you be upset if one stopped?
 3. `getcurrentactions` - is someone else already changing the platform right now?
