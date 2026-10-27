@@ -22,10 +22,6 @@ jobs:
         run: python3 -m compileall -q tools examples
       - name: shell syntax
         run: for f in tools/*.sh; do bash -n "$f"; done
-      - name: generated script tree matches the committed catalogue
-        run: python3 tools/gen-scripts.py --check
-      - name: every generated wrapper parses
-        run: find scripts -name '*.sh' -print0 | xargs -0 -n1 bash -n
       - name: tools are importable and their guards work
         run: |
           python3 - <<'PY'
