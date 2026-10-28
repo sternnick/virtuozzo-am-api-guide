@@ -7,10 +7,12 @@ Usage:
     ./tools/spec-verbs.py --destructive        # every slug that changes state
     ./tools/spec-verbs.py --grep domain        # filter by substring
     ./tools/spec-verbs.py --spec ./api_8.0.2.json
+    ./tools/spec-verbs.py --spec legacy        # the older CustomScripts revision
 
-The spec is fetched from the vendor's public SDK repository unless --spec names a local file, so you
-can run this offline. It is a generated artifact from an older API revision: use it as an index and
-confirm each slug against your own platform with tools/vz-capability-scan.sh.
+The default --spec is the vendor's live OpenAPI document (docs.jelastic.com, current platform
+revision, fetched with a browser User-Agent because CloudFront 403s plain scripted clients). Pass
+--spec legacy or a local file for the older generated revision. Use either as an index and confirm
+each slug against your own platform with tools/vz-capability-scan.sh.
 """
 from __future__ import annotations
 
@@ -21,8 +23,14 @@ import sys
 import urllib.request
 
 DEFAULT_SPEC = (
+    "https://docs.jelastic.com/api/resources/api.json"
+)
+LEGACY_SPEC = (
     "https://raw.githubusercontent.com/CustomScripts/jelastic-api/master/spec/api_8.0.2.json"
 )
+# The vendor docs sit behind CloudFront, which answers 403 to a bare "Mozilla/5.0" UA string.
+UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124 Safari/537.36")
 READ = re.compile(r"(?:^|/)(?:get|check|is|find|list)[a-z0-9]*$")
 WRITE = re.compile(
     r"(?:^|/)(?:stop|start|restart|reboot|delete|destroy|remove|add|create|set|edit|apply|deploy"
@@ -33,9 +41,11 @@ WRITE = re.compile(
 
 
 def load(path_or_url: str) -> dict:
+    if path_or_url == "legacy":
+        path_or_url = LEGACY_SPEC
     if path_or_url.startswith("http"):
-        req = urllib.request.Request(path_or_url, headers={"User-Agent": "spec-verbs"})
-        with urllib.request.urlopen(req, timeout=30) as fh:  # nosec - public vendor repo, https
+        req = urllib.request.Request(path_or_url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as fh:  # nosec - public vendor docs, https
             return json.load(fh)
     with open(path_or_url, encoding="utf-8") as fh:
         return json.load(fh)

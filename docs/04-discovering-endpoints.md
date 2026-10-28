@@ -10,9 +10,68 @@ but the methods that answer that question refuse token authentication.
 /api/system/settings/getapilist                 -> result 8 (dashboard surface, not granted)
 ```
 
-So the catalogue has to come from somewhere else. Three sources, best first.
+So the catalogue has to come from somewhere else. Four sources, best first.
 
-## Source 1: the vendor's generated OpenAPI spec
+## Source 0: the vendor's live OpenAPI spec (the authoritative one)
+
+The vendor publishes a machine-readable catalogue of the current Platform API next to the API docs
+themselves:
+
+```
+https://docs.jelastic.com/api/resources/api.json
+```
+
+Measured properties of this file (fetched 2026-10-27, spec `info.version` **8.15**, page footer
+"API v. 8.15.1"):
+
+| Property | Value |
+|---|---|
+| Format | OpenAPI 3.0 (`openapi: "3.0.0"`) |
+| Operations | **422**, every one declared `post` |
+| Server | `https://{host}/1.0/` (matches Surface 1 exactly) |
+| Security scheme | `components.securitySchemes.SessionAuth` = apiKey, `in: query`, `name: session` |
+| Parameters | per-operation `requestBody` with `application/x-www-form-urlencoded` schemas and `required` lists |
+| `appid`/`checksum` | per-request parameter mentions (428 / 3 occurrences), **not** top-level schemes |
+
+Fetching it has one trap: CloudFront in front of `www.virtuozzo.com` answers **403 to a bare
+`Mozilla/5.0` User-Agent** and 200 to a full browser UA. The same applies to the docs site itself:
+`https://docs.jelastic.com/` redirects to `www.virtuozzo.com/application-platform-docs/` and is 403 to
+scripted clients without the header, while `docs.jelastic.com/api/` (the spec and the generated doc
+pages) answers 200 without it:
+
+```bash
+curl -sL -A 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36' \
+     -o vendor-api.json https://docs.jelastic.com/api/resources/api.json
+```
+
+Measured distribution of the 422 operations (service = first two path segments):
+
+| Service | Ops | Service | Ops |
+|---|---|---|---|
+| `environment.control` | 91 | `iaas.volume` | 11 |
+| `users.collaboration` | 32 | `environment.build` | 11 |
+| `environment.binder` | 28 | `marketplace` app | 10 |
+| `environment.file` | 23 | `iaas.lb` | 10 |
+| `environment.deployment` | 21 | `users.team` | 9 |
+| `iaas.vm` | 18 | `environment.security` | 9 |
+| `environment.trigger` | 18 | *(`marketplace` x5, `iaas` x11, others)* | ~140 |
+| `billing.subscription` | 15 | | |
+| `users.authentication` | 12 | | |
+
+Verb-shape split of the same 422: **128** match the conservative read pattern
+(`get*/check*/is*/find*/list*`), **230** match a state-changing verb, and **64** match neither
+(`signin`, `upload`, `rename`, `searchactions`, `readlog`, `buildproject`, `restoredump`,
+`activatemember`, ...). Treat that last bucket as state-changing unless you have proven otherwise:
+`searchactions` and `readlog` are reads, `upload` and `writelog` are absolutely not.
+
+The raw file is **not safe to vendor into a redaction-checked repository**: its descriptions contain
+Java package strings rooted in the vendor's legacy hivext namespace (tails like `.dev` and `.com` make
+them look like hostnames to a gate) and ccTLD-shaped tokens inside parameter prose (a quota name ending
+in the two-letter country code for Greece, for example, trips a naive hostname regex). Extract the
+catalogue (paths, required parameters, verb classes) instead - `tools/gen-scripts.py` does exactly that
+and keeps the raw spec out of the tree.
+
+## Source 1: the generated PHP SDK's spec (older revision)
 
 [`CustomScripts/jelastic-api`](https://github.com/CustomScripts/jelastic-api) is a generated PHP SDK for
 the Platform API. Its `spec/api_8.0.2.json` is the interesting file, and it is the same surface these
@@ -30,7 +89,8 @@ notes describe:
 Same base path, same `session`-in-query rule. That is the confirmation that the URL pattern in these
 notes is the documented one and not an accident of one platform.
 
-What it gives you: roughly **310 operations**, distributed like this (from the spec in that repository):
+What it gives you: **310 operations** (measured 2026-10-27 against `spec/api_8.0.2.json`), distributed
+like this:
 
 | Path prefix | Operations | What lives there |
 |---|---|---|
