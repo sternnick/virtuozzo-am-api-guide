@@ -2,18 +2,30 @@
 # vz-capability-scan.sh - classify which read-only endpoints a given token can reach.
 #
 #   VZ_HOST=app.<your-platform-domain> VZ_TOKEN=... ./tools/vz-capability-scan.sh > capability.tsv
+#   VZ_HOST=... VZ_TOKEN=... ./tools/vz-capability-scan.sh --from-catalog > capability.tsv
 #
-# Read-only by construction: the path list below contains only get*/check*/is* slugs, and the
-# arguments sent are either none or an obviously nonexistent object name. Exit code is always 0;
-# the matrix is the product. Columns: path  http  result  verdict  error
+# Read-only by construction: without --from-catalog the path list below contains only get*/check*/is*
+# slugs; with --from-catalog the list is every class=read line of scripts/index.tsv (128 at spec 8.15),
+# which is the same read vocabulary the client guard enforces. Arguments sent are always none or an
+# obviously nonexistent object name. Exit code is always 0; the matrix is the product.
+# Columns: path  http  result  verdict  error
 set -uo pipefail
 
 host="${VZ_HOST:?set VZ_HOST}"
 token="${VZ_TOKEN:?set VZ_TOKEN}"
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
 # Deliberately no object names: an omitted envName makes the platform answer 705/2303 with the default
 # context, which proves the method exists without ever naming - let alone targeting - a real object.
 
-read_paths=$(cat <<'EOF'
+if [ "${1:-}" = "--from-catalog" ]; then
+  index="$root/scripts/index.tsv"
+  [ -r "$index" ] || { echo "no scripts/index.tsv - run tools/gen-scripts.py first" >&2; exit 1; }
+  read_paths="$(awk -F'\t' '$2=="read"{print $1}' "$index")"
+elif [ -n "${1:-}" ]; then
+  echo "usage: $0 [--from-catalog]" >&2; exit 1
+else
+  read_paths=$(cat <<'EOF'
 /billing/account/rest/getaccount
 /billing/account/rest/getquotas
 /environment/binder/rest/getsslcerts
@@ -69,6 +81,7 @@ read_paths=$(cat <<'EOF'
 /utils/scheduler/rest/gettasks
 EOF
 )
+fi
 
 verdict_of() {                       # result -> verdict
   case "$1" in
