@@ -1,0 +1,6844 @@
+{
+ "operations": [
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid"
+   ],
+   "path": "/billing/account/rest/getaccount",
+   "required": [],
+   "slug": "getaccount",
+   "sub": "account"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "starttime",
+    "endtime",
+    "targetAppid"
+   ],
+   "path": "/billing/account/rest/getextendedaccountbillinghistorybyperiod",
+   "required": [
+    "endtime",
+    "starttime"
+   ],
+   "slug": "getextendedaccountbillinghistorybyperiod",
+   "sub": "account"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "quotasnames"
+   ],
+   "path": "/billing/account/rest/getquotas",
+   "required": [],
+   "slug": "getquotas",
+   "sub": "account"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "immediately",
+    "cancelDate",
+    "passphrase",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/cancel",
+   "required": [
+    "id"
+   ],
+   "slug": "cancel",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "itemResourceId",
+    "targetEnvName"
+   ],
+   "path": "/billing/subscription/rest/cloneproduct",
+   "required": [
+    "itemResourceId",
+    "subscriptionId",
+    "targetEnvName"
+   ],
+   "slug": "cloneproduct",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId"
+   ],
+   "path": "/billing/subscription/rest/discardupdatesubscription",
+   "required": [
+    "subscriptionId"
+   ],
+   "slug": "discardupdatesubscription",
+   "sub": "subscription"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/getcategories",
+   "required": [],
+   "slug": "getcategories",
+   "sub": "subscription"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "categoryId",
+    "expandFields",
+    "startRow",
+    "resultCount",
+    "orderField",
+    "orderDirection"
+   ],
+   "path": "/billing/subscription/rest/getproducts",
+   "required": [],
+   "slug": "getproducts",
+   "sub": "subscription"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "productId",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/getserviceplans",
+   "required": [],
+   "slug": "getserviceplans",
+   "sub": "subscription"
+  },
+  {
+   "class": "read",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "productId",
+    "status",
+    "expandFields",
+    "startRow",
+    "resultCount",
+    "orderField",
+    "orderDirection"
+   ],
+   "path": "/billing/subscription/rest/getsubscriptions",
+   "required": [],
+   "slug": "getsubscriptions",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "settings",
+    "envName",
+    "displayName",
+    "envGroups",
+    "region",
+    "lang"
+   ],
+   "path": "/billing/subscription/rest/installproduct",
+   "required": [
+    "subscriptionId"
+   ],
+   "slug": "installproduct",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "itemResourceId",
+    "targetSubscriptionId",
+    "targetItemId",
+    "passphrase"
+   ],
+   "path": "/billing/subscription/rest/moveproduct",
+   "required": [
+    "itemResourceId",
+    "passphrase",
+    "subscriptionId",
+    "targetItemId",
+    "targetSubscriptionId"
+   ],
+   "slug": "moveproduct",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "enable",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/setautopay",
+   "required": [
+    "enable",
+    "id"
+   ],
+   "slug": "setautopay",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "productId",
+    "items",
+    "chargeAutomatically",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/subscribe",
+   "required": [
+    "items",
+    "productId"
+   ],
+   "slug": "subscribe",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "id",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/undocancel",
+   "required": [
+    "id"
+   ],
+   "slug": "undocancel",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "itemResourceId",
+    "passphrase"
+   ],
+   "path": "/billing/subscription/rest/uninstallproduct",
+   "required": [
+    "itemId",
+    "itemResourceId",
+    "passphrase",
+    "subscriptionId"
+   ],
+   "slug": "uninstallproduct",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "quantity"
+   ],
+   "path": "/billing/subscription/rest/upcominginvoice",
+   "required": [
+    "itemId",
+    "quantity",
+    "subscriptionId"
+   ],
+   "slug": "upcominginvoice",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "billing",
+   "params": [
+    "appid",
+    "subscriptionId",
+    "itemId",
+    "quantity",
+    "expandFields"
+   ],
+   "path": "/billing/subscription/rest/updatesubscription",
+   "required": [
+    "itemId",
+    "quantity",
+    "subscriptionId"
+   ],
+   "slug": "updatesubscription",
+   "sub": "subscription"
+  },
+  {
+   "class": "write",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secrets",
+    "scope",
+    "description"
+   ],
+   "path": "/configuration/secrets/rest/applysecrets",
+   "required": [
+    "secrets"
+   ],
+   "slug": "applysecrets",
+   "sub": "secrets"
+  },
+  {
+   "class": "write",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secretName",
+    "data",
+    "description"
+   ],
+   "path": "/configuration/secrets/rest/createsecret",
+   "required": [
+    "data",
+    "secretName"
+   ],
+   "slug": "createsecret",
+   "sub": "secrets"
+  },
+  {
+   "class": "write",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secrets",
+    "scope",
+    "description"
+   ],
+   "path": "/configuration/secrets/rest/createsecrets",
+   "required": [
+    "secrets"
+   ],
+   "slug": "createsecrets",
+   "sub": "secrets"
+  },
+  {
+   "class": "write",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secretNames",
+    "scope"
+   ],
+   "path": "/configuration/secrets/rest/deletesecrets",
+   "required": [
+    "secretNames"
+   ],
+   "slug": "deletesecrets",
+   "sub": "secrets"
+  },
+  {
+   "class": "read",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secretName",
+    "scope"
+   ],
+   "path": "/configuration/secrets/rest/getsecret",
+   "required": [
+    "secretName"
+   ],
+   "slug": "getsecret",
+   "sub": "secrets"
+  },
+  {
+   "class": "read",
+   "group": "configuration",
+   "params": [
+    "appid",
+    "secretNames",
+    "scope"
+   ],
+   "path": "/configuration/secrets/rest/listsecrets",
+   "required": [],
+   "slug": "listsecrets",
+   "sub": "secrets"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "domains",
+    "nodeGroup",
+    "nodeId",
+    "subdomain"
+   ],
+   "path": "/environment/binder/rest/adddomains",
+   "required": [
+    "domains",
+    "envName"
+   ],
+   "slug": "adddomains",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "key",
+    "cert",
+    "interm"
+   ],
+   "path": "/environment/binder/rest/addsslcert",
+   "required": [
+    "cert",
+    "envName",
+    "key"
+   ],
+   "slug": "addsslcert",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "type"
+   ],
+   "path": "/environment/binder/rest/attachextip",
+   "required": [
+    "envName",
+    "nodeid"
+   ],
+   "slug": "attachextip",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "extDomain",
+    "certId"
+   ],
+   "path": "/environment/binder/rest/bindextdomain",
+   "required": [
+    "envName",
+    "extDomain"
+   ],
+   "slug": "bindextdomain",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "extDomains",
+    "certId"
+   ],
+   "path": "/environment/binder/rest/bindextdomains",
+   "required": [
+    "envName",
+    "extDomains"
+   ],
+   "slug": "bindextdomains",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "certKey",
+    "cert",
+    "intermediate"
+   ],
+   "path": "/environment/binder/rest/bindssl",
+   "required": [
+    "cert",
+    "certKey",
+    "envName",
+    "intermediate"
+   ],
+   "slug": "bindssl",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "certId",
+    "entryPoint",
+    "extDomains"
+   ],
+   "path": "/environment/binder/rest/bindsslcert",
+   "required": [
+    "certId",
+    "envName"
+   ],
+   "slug": "bindsslcert",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "session",
+    "domain",
+    "region"
+   ],
+   "path": "/environment/binder/rest/checkdomain",
+   "required": [
+    "domain"
+   ],
+   "slug": "checkdomain",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "extdomain"
+   ],
+   "path": "/environment/binder/rest/checkextdomain",
+   "required": [
+    "extdomain"
+   ],
+   "slug": "checkextdomain",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/binder/rest/deletessl",
+   "required": [
+    "envName"
+   ],
+   "slug": "deletessl",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "ip"
+   ],
+   "path": "/environment/binder/rest/detachextip",
+   "required": [
+    "envName",
+    "ip",
+    "nodeid"
+   ],
+   "slug": "detachextip",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/binder/rest/disablessl",
+   "required": [
+    "envName"
+   ],
+   "slug": "disablessl",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "key",
+    "cert",
+    "interm"
+   ],
+   "path": "/environment/binder/rest/editsslcert",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "editsslcert",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "inShort"
+   ],
+   "path": "/environment/binder/rest/getdomains",
+   "required": [
+    "envName"
+   ],
+   "slug": "getdomains",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid"
+   ],
+   "path": "/environment/binder/rest/getextdomains",
+   "required": [],
+   "slug": "getextdomains",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/binder/rest/getssl",
+   "required": [
+    "envName"
+   ],
+   "slug": "getssl",
+   "sub": "binder"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "ids"
+   ],
+   "path": "/environment/binder/rest/getsslcerts",
+   "required": [
+    "envName"
+   ],
+   "slug": "getsslcerts",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "enabled"
+   ],
+   "path": "/environment/binder/rest/managenodednsstate",
+   "required": [
+    "enabled",
+    "envName"
+   ],
+   "slug": "managenodednsstate",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "sourceNodeId",
+    "targetNodeId",
+    "ips"
+   ],
+   "path": "/environment/binder/rest/moveextips",
+   "required": [
+    "envName",
+    "ips",
+    "sourceNodeId",
+    "targetNodeId"
+   ],
+   "slug": "moveextips",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "domains",
+    "nodeGroup",
+    "nodeId"
+   ],
+   "path": "/environment/binder/rest/removedomains",
+   "required": [
+    "domains",
+    "envName"
+   ],
+   "slug": "removedomains",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "extdomain"
+   ],
+   "path": "/environment/binder/rest/removeextdomain",
+   "required": [
+    "envName",
+    "extdomain"
+   ],
+   "slug": "removeextdomain",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/binder/rest/removessl",
+   "required": [
+    "envName"
+   ],
+   "slug": "removessl",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "ids"
+   ],
+   "path": "/environment/binder/rest/removesslcerts",
+   "required": [
+    "envName",
+    "ids"
+   ],
+   "slug": "removesslcerts",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "count",
+    "nodeId",
+    "nodeGroup"
+   ],
+   "path": "/environment/binder/rest/setcrossservicenetworkipcount",
+   "required": [
+    "count",
+    "envName"
+   ],
+   "slug": "setcrossservicenetworkipcount",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "type",
+    "count",
+    "nodeGroup",
+    "nodeId"
+   ],
+   "path": "/environment/binder/rest/setextipcount",
+   "required": [
+    "count",
+    "envName",
+    "type"
+   ],
+   "slug": "setextipcount",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "targetappid"
+   ],
+   "path": "/environment/binder/rest/swapextdomains",
+   "required": [
+    "envName",
+    "targetappid"
+   ],
+   "slug": "swapextdomains",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "sourceNodeId",
+    "targetNodeId",
+    "sourceIp",
+    "targetIp"
+   ],
+   "path": "/environment/binder/rest/swapextips",
+   "required": [
+    "envName",
+    "sourceNodeId",
+    "targetNodeId"
+   ],
+   "slug": "swapextips",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "extDomains"
+   ],
+   "path": "/environment/binder/rest/unbindsslcert",
+   "required": [
+    "envName"
+   ],
+   "slug": "unbindsslcert",
+   "sub": "binder"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "name",
+    "type",
+    "path",
+    "keyId",
+    "login",
+    "password",
+    "targetEnv",
+    "context",
+    "branch",
+    "autoUpdate",
+    "interval",
+    "autoResolveConflict",
+    "delay",
+    "deployNow",
+    "hooks",
+    "workDir",
+    "targetNodeGroup",
+    "isSequential"
+   ],
+   "path": "/environment/build/rest/addproject",
+   "required": [
+    "autoResolveConflict",
+    "autoUpdate",
+    "envName",
+    "name",
+    "nodeId",
+    "path",
+    "type"
+   ],
+   "slug": "addproject",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "name",
+    "type",
+    "path",
+    "targetEnv",
+    "autoUpdate",
+    "autoResolveConflict",
+    "login",
+    "password",
+    "context",
+    "branch",
+    "interval",
+    "delay",
+    "deployNow",
+    "hooks",
+    "workDir"
+   ],
+   "path": "/environment/build/rest/addprojectwithcreds",
+   "required": [
+    "autoResolveConflict",
+    "autoUpdate",
+    "envName",
+    "name",
+    "nodeId",
+    "path",
+    "type"
+   ],
+   "slug": "addprojectwithcreds",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "name",
+    "type",
+    "path",
+    "targetEnv",
+    "autoUpdate",
+    "autoResolveConflict",
+    "keyId",
+    "context",
+    "branch",
+    "interval",
+    "delay",
+    "deployNow",
+    "hooks",
+    "workDir"
+   ],
+   "path": "/environment/build/rest/addprojectwithkey",
+   "required": [
+    "autoResolveConflict",
+    "autoUpdate",
+    "envName",
+    "name",
+    "nodeId",
+    "path",
+    "type"
+   ],
+   "slug": "addprojectwithkey",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid",
+    "delay",
+    "update",
+    "isSequential"
+   ],
+   "path": "/environment/build/rest/builddeployproject",
+   "required": [
+    "envName",
+    "nodeid",
+    "projectid"
+   ],
+   "slug": "builddeployproject",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid",
+    "update",
+    "skipPublish",
+    "async"
+   ],
+   "path": "/environment/build/rest/buildproject",
+   "required": [
+    "envName",
+    "nodeid",
+    "projectid"
+   ],
+   "slug": "buildproject",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid",
+    "delay",
+    "isSequential"
+   ],
+   "path": "/environment/build/rest/deployproject",
+   "required": [
+    "envName",
+    "nodeid",
+    "projectid"
+   ],
+   "slug": "deployproject",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid",
+    "name",
+    "type",
+    "path",
+    "keyId",
+    "login",
+    "password",
+    "env",
+    "context",
+    "branch",
+    "autoupdate",
+    "interval",
+    "autoResolveConflict",
+    "delay",
+    "hooks",
+    "workDir",
+    "targetNodeGroup"
+   ],
+   "path": "/environment/build/rest/editproject",
+   "required": [
+    "envName",
+    "name",
+    "nodeid",
+    "path",
+    "projectid",
+    "type"
+   ],
+   "slug": "editproject",
+   "sub": "build"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid",
+    "projectName"
+   ],
+   "path": "/environment/build/rest/getprojectinfo",
+   "required": [
+    "envName",
+    "nodeid"
+   ],
+   "slug": "getprojectinfo",
+   "sub": "build"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId"
+   ],
+   "path": "/environment/build/rest/getprojects",
+   "required": [
+    "envName"
+   ],
+   "slug": "getprojects",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "projectid"
+   ],
+   "path": "/environment/build/rest/removeproject",
+   "required": [
+    "envName",
+    "nodeid",
+    "projectid"
+   ],
+   "slug": "removeproject",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "projectId",
+    "context"
+   ],
+   "path": "/environment/build/rest/update",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "update",
+   "sub": "build"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "vars"
+   ],
+   "path": "/environment/control/rest/addcontainerenvvars",
+   "required": [
+    "envName",
+    "vars"
+   ],
+   "slug": "addcontainerenvvars",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/addcontainervolume",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "addcontainervolume",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "path": "/environment/control/rest/addcontainervolumebygroup",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "slug": "addcontainervolumebygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "volumes"
+   ],
+   "path": "/environment/control/rest/addcontainervolumes",
+   "required": [
+    "envName",
+    "volumes"
+   ],
+   "slug": "addcontainervolumes",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "privatePort",
+    "protocol",
+    "name"
+   ],
+   "path": "/environment/control/rest/addendpoint",
+   "required": [
+    "envName",
+    "name",
+    "nodeId",
+    "privatePort",
+    "protocol"
+   ],
+   "slug": "addendpoint",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "properties"
+   ],
+   "path": "/environment/control/rest/addenvproperty",
+   "required": [
+    "envName",
+    "properties"
+   ],
+   "slug": "addenvproperty",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "srcPort",
+    "dstPort",
+    "protocol",
+    "comment"
+   ],
+   "path": "/environment/control/rest/addportredirect",
+   "required": [
+    "dstPort",
+    "envName",
+    "nodeId",
+    "protocol",
+    "srcPort"
+   ],
+   "slug": "addportredirect",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "properties"
+   ],
+   "path": "/environment/control/rest/applyenvproperty",
+   "required": [
+    "envName",
+    "properties"
+   ],
+   "slug": "applyenvproperty",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "data"
+   ],
+   "path": "/environment/control/rest/applynodegroupdata",
+   "required": [
+    "data",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "applynodegroupdata",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup"
+   ],
+   "path": "/environment/control/rest/attachenvgroup",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "attachenvgroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "actionkey",
+    "env",
+    "nodes"
+   ],
+   "path": "/environment/control/rest/changetopology",
+   "required": [
+    "env",
+    "envName",
+    "nodes"
+   ],
+   "slug": "changetopology",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "hardwareNodeGroup"
+   ],
+   "path": "/environment/control/rest/checkmigrationpossibility",
+   "required": [
+    "envName"
+   ],
+   "slug": "checkmigrationpossibility",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/clearlog",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "clearlog",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "srcEnvName",
+    "dstEnvName",
+    "useExternalMounts"
+   ],
+   "path": "/environment/control/rest/cloneenv",
+   "required": [
+    "dstEnvName",
+    "srcEnvName"
+   ],
+   "slug": "cloneenv",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "env",
+    "nodes",
+    "actionkey",
+    "ownerUid",
+    "envGroups"
+   ],
+   "path": "/environment/control/rest/createenvironment",
+   "required": [
+    "env",
+    "nodes"
+   ],
+   "slug": "createenvironment",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "password"
+   ],
+   "path": "/environment/control/rest/deleteenv",
+   "required": [
+    "envName",
+    "password"
+   ],
+   "slug": "deleteenv",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "fileUrl",
+    "fileName",
+    "context",
+    "atomicDeploy",
+    "delay",
+    "nodeGroup",
+    "hooks",
+    "isSequential"
+   ],
+   "path": "/environment/control/rest/deployapp",
+   "required": [
+    "envName",
+    "fileName",
+    "fileUrl"
+   ],
+   "slug": "deployapp",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup"
+   ],
+   "path": "/environment/control/rest/detachenvgroup",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "detachenvgroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "name",
+    "privatePort",
+    "protocol"
+   ],
+   "path": "/environment/control/rest/editendpoint",
+   "required": [
+    "envName",
+    "id",
+    "name",
+    "privatePort",
+    "protocol"
+   ],
+   "slug": "editendpoint",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/editnodegroup",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "editnodegroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "filter",
+    "user",
+    "password"
+   ],
+   "path": "/environment/control/rest/editregistrycredentials",
+   "required": [
+    "filter"
+   ],
+   "slug": "editregistrycredentials",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "commandList",
+    "sayYes",
+    "async"
+   ],
+   "path": "/environment/control/rest/execcmdbygroup",
+   "required": [
+    "commandList",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "execcmdbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "commandList",
+    "sayYes"
+   ],
+   "path": "/environment/control/rest/execcmdbyid",
+   "required": [
+    "commandList",
+    "envName",
+    "nodeId"
+   ],
+   "slug": "execcmdbyid",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "duration",
+    "endtime"
+   ],
+   "path": "/environment/control/rest/getallsumstatbyuid",
+   "required": [],
+   "slug": "getallsumstatbyuid",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "ownerUid"
+   ],
+   "path": "/environment/control/rest/getbasicenvsinfo",
+   "required": [],
+   "slug": "getbasicenvsinfo",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainerentrypoint",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainerentrypoint",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainerenvvars",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainerenvvars",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/getcontainerenvvarsbygroup",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "getcontainerenvvarsbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "image",
+    "registry",
+    "userName",
+    "password",
+    "ignoreFormat"
+   ],
+   "path": "/environment/control/rest/getcontainermanifest",
+   "required": [
+    "image"
+   ],
+   "slug": "getcontainermanifest",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainernodetags",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainernodetags",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainerruncmd",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainerruncmd",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainerrunconfig",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainerrunconfig",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "image",
+    "registry",
+    "userName",
+    "password"
+   ],
+   "path": "/environment/control/rest/getcontainertags",
+   "required": [
+    "image"
+   ],
+   "slug": "getcontainertags",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/getcontainervolumesbygroup",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "getcontainervolumesbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getcontainervolumesbyid",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getcontainervolumesbyid",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getendpoints",
+   "required": [
+    "envName"
+   ],
+   "slug": "getendpoints",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "lazy"
+   ],
+   "path": "/environment/control/rest/getenvinfo",
+   "required": [
+    "envName"
+   ],
+   "slug": "getenvinfo",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "propertyKeys"
+   ],
+   "path": "/environment/control/rest/getenvproperty",
+   "required": [
+    "envName"
+   ],
+   "slug": "getenvproperty",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "lazy",
+    "ownerUid"
+   ],
+   "path": "/environment/control/rest/getenvs",
+   "required": [],
+   "slug": "getenvs",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/getlogs",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getlogs",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/getlogslist",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getlogslist",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/control/rest/getnodegroups",
+   "required": [
+    "envName"
+   ],
+   "slug": "getnodegroups",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getnodetags",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getnodetags",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid"
+   ],
+   "path": "/environment/control/rest/getregions",
+   "required": [],
+   "slug": "getregions",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "groupName",
+    "isEnabled"
+   ],
+   "path": "/environment/control/rest/getregionsinner",
+   "required": [
+    "groupName"
+   ],
+   "slug": "getregionsinner",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/getregistryinfo",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "getregistryinfo",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeType",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/getsoftwarepackages",
+   "required": [
+    "envName"
+   ],
+   "slug": "getsoftwarepackages",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "nodeId"
+   ],
+   "path": "/environment/control/rest/getsshaccessinfo",
+   "required": [
+    "nodeId"
+   ],
+   "slug": "getsshaccessinfo",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "duration",
+    "interval",
+    "endtime",
+    "nodeid",
+    "nodetype",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/getstats",
+   "required": [
+    "duration",
+    "envName",
+    "interval"
+   ],
+   "slug": "getstats",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "duration",
+    "endtime"
+   ],
+   "path": "/environment/control/rest/getsumstat",
+   "required": [
+    "duration",
+    "envName"
+   ],
+   "slug": "getsumstat",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "nodeType",
+    "tag"
+   ],
+   "path": "/environment/control/rest/gettemplatemanifest",
+   "required": [
+    "nodeType",
+    "tag"
+   ],
+   "slug": "gettemplatemanifest",
+   "sub": "control"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "type",
+    "ownerUid"
+   ],
+   "path": "/environment/control/rest/gettemplates",
+   "required": [],
+   "slug": "gettemplates",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "hardwareNodeGroup",
+    "isOnline"
+   ],
+   "path": "/environment/control/rest/migrate",
+   "required": [
+    "envName"
+   ],
+   "slug": "migrate",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path",
+    "from",
+    "count"
+   ],
+   "path": "/environment/control/rest/readlog",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "readlog",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "tag",
+    "useExistingVolumes",
+    "login",
+    "password",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/redeploycontainerbyid",
+   "required": [
+    "envName",
+    "nodeId",
+    "tag"
+   ],
+   "slug": "redeploycontainerbyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "tag",
+    "useExistingVolumes",
+    "login",
+    "password",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/redeploycontainers",
+   "required": [
+    "envName",
+    "tag"
+   ],
+   "slug": "redeploycontainers",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "tag",
+    "isSequential",
+    "useExistingVolumes",
+    "delay",
+    "login",
+    "password",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/redeploycontainersbygroup",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "tag"
+   ],
+   "slug": "redeploycontainersbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "context",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/removeapp",
+   "required": [
+    "context",
+    "envName"
+   ],
+   "slug": "removeapp",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "vars"
+   ],
+   "path": "/environment/control/rest/removecontainerenvvars",
+   "required": [
+    "envName",
+    "vars"
+   ],
+   "slug": "removecontainerenvvars",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/removecontainervolume",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "removecontainervolume",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "path": "/environment/control/rest/removecontainervolumebygroup",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "slug": "removecontainervolumebygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "volumes"
+   ],
+   "path": "/environment/control/rest/removecontainervolumes",
+   "required": [
+    "envName",
+    "volumes"
+   ],
+   "slug": "removecontainervolumes",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/control/rest/removeendpoint",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "removeendpoint",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "propertyKeys"
+   ],
+   "path": "/environment/control/rest/removeenvproperty",
+   "required": [
+    "envName",
+    "propertyKeys"
+   ],
+   "slug": "removeenvproperty",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/control/rest/removelog",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "removelog",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "oldcontext",
+    "newcontext",
+    "nodeGroup"
+   ],
+   "path": "/environment/control/rest/renameapp",
+   "required": [
+    "envName",
+    "newcontext",
+    "oldcontext"
+   ],
+   "slug": "renameapp",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetcontainerpasswordbyid",
+   "required": [
+    "envName",
+    "nodeid"
+   ],
+   "slug": "resetcontainerpasswordbyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetcontainerspasswordbygroup",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "resetcontainerspasswordbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetnodepassword",
+   "required": [
+    "envName"
+   ],
+   "slug": "resetnodepassword",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetnodepasswordbyid",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "resetnodepasswordbyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeType",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetnodepasswordbytype",
+   "required": [
+    "envName",
+    "nodeType"
+   ],
+   "slug": "resetnodepasswordbytype",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "password"
+   ],
+   "path": "/environment/control/rest/resetservicepassword",
+   "required": [
+    "envName"
+   ],
+   "slug": "resetservicepassword",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/restartcontainerbyid",
+   "required": [
+    "envName",
+    "nodeid"
+   ],
+   "slug": "restartcontainerbyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/restartnodebyid",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "restartnodebyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "delay",
+    "isSequential",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/restartnodes",
+   "required": [
+    "envName"
+   ],
+   "slug": "restartnodes",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "delay",
+    "isSequential",
+    "manageDNSState"
+   ],
+   "path": "/environment/control/rest/restartservices",
+   "required": [
+    "envName"
+   ],
+   "slug": "restartservices",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeType",
+    "dbName",
+    "password",
+    "dumpUrl",
+    "user"
+   ],
+   "path": "/environment/control/rest/restoredump",
+   "required": [
+    "dbName",
+    "dumpUrl",
+    "envName",
+    "nodeType",
+    "password"
+   ],
+   "slug": "restoredump",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeid",
+    "flexibleCloudlets",
+    "fixedCloudlets"
+   ],
+   "path": "/environment/control/rest/setcloudletscountbyid",
+   "required": [
+    "envName",
+    "fixedCloudlets",
+    "flexibleCloudlets",
+    "nodeid"
+   ],
+   "slug": "setcloudletscountbyid",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "data"
+   ],
+   "path": "/environment/control/rest/setcontainerentrypoint",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "setcontainerentrypoint",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "vars"
+   ],
+   "path": "/environment/control/rest/setcontainerenvvars",
+   "required": [
+    "envName",
+    "nodeId",
+    "vars"
+   ],
+   "slug": "setcontainerenvvars",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "data"
+   ],
+   "path": "/environment/control/rest/setcontainerenvvarsbygroup",
+   "required": [
+    "data",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "setcontainerenvvarsbygroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "data"
+   ],
+   "path": "/environment/control/rest/setcontainerruncmd",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "setcontainerruncmd",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "displayName"
+   ],
+   "path": "/environment/control/rest/setenvdisplayname",
+   "required": [
+    "envName"
+   ],
+   "slug": "setenvdisplayname",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup"
+   ],
+   "path": "/environment/control/rest/setenvgroup",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "setenvgroup",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "displayName"
+   ],
+   "path": "/environment/control/rest/setnodedisplayname",
+   "required": [
+    "envName"
+   ],
+   "slug": "setnodedisplayname",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "displayName"
+   ],
+   "path": "/environment/control/rest/setnodegroupdisplayname",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "setnodegroupdisplayname",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "enabled"
+   ],
+   "path": "/environment/control/rest/setslbaccessenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "setslbaccessenabled",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "id"
+   ],
+   "path": "/environment/control/rest/skipmessage",
+   "required": [
+    "envName",
+    "id",
+    "nodeId"
+   ],
+   "slug": "skipmessage",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/control/rest/sleepenv",
+   "required": [
+    "envName"
+   ],
+   "slug": "sleepenv",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/control/rest/startenv",
+   "required": [
+    "envName"
+   ],
+   "slug": "startenv",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/control/rest/stopenv",
+   "required": [
+    "envName"
+   ],
+   "slug": "stopenv",
+   "sub": "control"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "name",
+    "repo",
+    "deployment",
+    "settings",
+    "hooks"
+   ],
+   "path": "/environment/deployment/rest/addbuildproject",
+   "required": [
+    "envName",
+    "name",
+    "nodeId",
+    "repo"
+   ],
+   "slug": "addbuildproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "name",
+    "url",
+    "type",
+    "branch",
+    "keyId",
+    "login",
+    "password",
+    "description"
+   ],
+   "path": "/environment/deployment/rest/addrepo",
+   "required": [
+    "name",
+    "url"
+   ],
+   "slug": "addrepo",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project",
+    "skipUpdate",
+    "delay"
+   ],
+   "path": "/environment/deployment/rest/builddeployproject",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "builddeployproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project",
+    "skipUpload",
+    "skipUpdate"
+   ],
+   "path": "/environment/deployment/rest/buildproject",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "buildproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "repo",
+    "context",
+    "nodeGroup",
+    "buildNodeId",
+    "settings",
+    "hooks",
+    "delay"
+   ],
+   "path": "/environment/deployment/rest/deploy",
+   "required": [
+    "context",
+    "envName",
+    "repo"
+   ],
+   "slug": "deploy",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "context",
+    "fileUrl",
+    "fileName",
+    "zdt",
+    "hooks",
+    "delay"
+   ],
+   "path": "/environment/deployment/rest/deployarchive",
+   "required": [
+    "envName",
+    "fileName",
+    "fileUrl"
+   ],
+   "slug": "deployarchive",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "path": "/environment/deployment/rest/deployproject",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "deployproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project",
+    "name",
+    "repo",
+    "deployment",
+    "settings",
+    "hooks"
+   ],
+   "path": "/environment/deployment/rest/editbuildproject",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "editbuildproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "context",
+    "newContext",
+    "repo",
+    "settings",
+    "hooks",
+    "delay"
+   ],
+   "path": "/environment/deployment/rest/editproject",
+   "required": [
+    "context",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "editproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "id",
+    "name",
+    "type",
+    "url",
+    "branch",
+    "keyId",
+    "login",
+    "password",
+    "description"
+   ],
+   "path": "/environment/deployment/rest/editrepo",
+   "required": [
+    "id"
+   ],
+   "slug": "editrepo",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "path": "/environment/deployment/rest/getbuildprojectinfo",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "getbuildprojectinfo",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId"
+   ],
+   "path": "/environment/deployment/rest/getbuildprojects",
+   "required": [
+    "envName"
+   ],
+   "slug": "getbuildprojects",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/deployment/rest/getdeployments",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "getdeployments",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "context",
+    "project"
+   ],
+   "path": "/environment/deployment/rest/gethooks",
+   "required": [
+    "envName"
+   ],
+   "slug": "gethooks",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "context",
+    "nodeGroup"
+   ],
+   "path": "/environment/deployment/rest/getprojectinfo",
+   "required": [
+    "context",
+    "envName"
+   ],
+   "slug": "getprojectinfo",
+   "sub": "deployment"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/environment/deployment/rest/getrepos",
+   "required": [],
+   "slug": "getrepos",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "path": "/environment/deployment/rest/removebuildproject",
+   "required": [
+    "envName",
+    "nodeId",
+    "project"
+   ],
+   "slug": "removebuildproject",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/environment/deployment/rest/removerepo",
+   "required": [
+    "id"
+   ],
+   "slug": "removerepo",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "oldContext",
+    "newContext"
+   ],
+   "path": "/environment/deployment/rest/renamecontext",
+   "required": [
+    "envName",
+    "newContext",
+    "nodeGroup",
+    "oldContext"
+   ],
+   "slug": "renamecontext",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "context"
+   ],
+   "path": "/environment/deployment/rest/undeploy",
+   "required": [
+    "context",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "undeploy",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "context",
+    "project",
+    "delay"
+   ],
+   "path": "/environment/deployment/rest/update",
+   "required": [
+    "envName"
+   ],
+   "slug": "update",
+   "sub": "deployment"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "settings"
+   ],
+   "path": "/environment/export/rest/create",
+   "required": [
+    "settings"
+   ],
+   "slug": "create",
+   "sub": "export"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/export/rest/delete",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "delete",
+   "sub": "export"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "fileName"
+   ],
+   "path": "/environment/export/rest/deleteexporteddata",
+   "required": [
+    "envName",
+    "fileName"
+   ],
+   "slug": "deleteexporteddata",
+   "sub": "export"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName"
+   ],
+   "path": "/environment/export/rest/getlist",
+   "required": [
+    "envName"
+   ],
+   "slug": "getlist",
+   "sub": "export"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/export/rest/getmanifest",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "getmanifest",
+   "sub": "export"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "path",
+    "keyword",
+    "filter",
+    "isDir"
+   ],
+   "path": "/environment/file/rest/addfavorite",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "addfavorite",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "path",
+    "protocol",
+    "sourceHost",
+    "sourcePath",
+    "sourceNodeId",
+    "name",
+    "readOnly",
+    "sourceAddressType"
+   ],
+   "path": "/environment/file/rest/addmountpointbygroup",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "path",
+    "sourcePath"
+   ],
+   "slug": "addmountpointbygroup",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path",
+    "protocol",
+    "sourceHost",
+    "sourcePath",
+    "sourceNodeId",
+    "name",
+    "readOnly",
+    "sourceAddressType"
+   ],
+   "path": "/environment/file/rest/addmountpointbyid",
+   "required": [
+    "envName",
+    "nodeId",
+    "path",
+    "sourcePath"
+   ],
+   "slug": "addmountpointbyid",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "body",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/append",
+   "required": [
+    "envName"
+   ],
+   "slug": "append",
+   "sub": "file"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "sourceNodeId"
+   ],
+   "path": "/environment/file/rest/checkcrossmount",
+   "required": [
+    "envName",
+    "nodeId",
+    "sourceNodeId"
+   ],
+   "slug": "checkcrossmount",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "src",
+    "dest",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/copy",
+   "required": [
+    "dest",
+    "envName",
+    "src"
+   ],
+   "slug": "copy",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "isdir",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/create",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "create",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/delete",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "delete",
+   "sub": "file"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/file/rest/getexportedlist",
+   "required": [
+    "envName",
+    "nodeId"
+   ],
+   "slug": "getexportedlist",
+   "sub": "file"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId"
+   ],
+   "path": "/environment/file/rest/getfavorites",
+   "required": [
+    "envName"
+   ],
+   "slug": "getfavorites",
+   "sub": "file"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "nodeType",
+    "nodeGroup",
+    "nodeid",
+    "filter"
+   ],
+   "path": "/environment/file/rest/getlist",
+   "required": [
+    "envName"
+   ],
+   "slug": "getlist",
+   "sub": "file"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "nodeGroup"
+   ],
+   "path": "/environment/file/rest/getmountpoints",
+   "required": [
+    "envName"
+   ],
+   "slug": "getmountpoints",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "nodeType",
+    "nodeGroup",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/read",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "read",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path",
+    "clientNodeId",
+    "clientPath"
+   ],
+   "path": "/environment/file/rest/removeexport",
+   "required": [
+    "clientNodeId",
+    "clientPath",
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "removeexport",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/file/rest/removefavorite",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "removefavorite",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "path": "/environment/file/rest/removemountpointbygroup",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "path"
+   ],
+   "slug": "removemountpointbygroup",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "path": "/environment/file/rest/removemountpointbyid",
+   "required": [
+    "envName",
+    "nodeId",
+    "path"
+   ],
+   "slug": "removemountpointbyid",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "oldPath",
+    "newPath",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/rename",
+   "required": [
+    "envName",
+    "newPath",
+    "oldPath"
+   ],
+   "slug": "rename",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "pattern",
+    "replacement",
+    "nth",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid"
+   ],
+   "path": "/environment/file/rest/replaceinbody",
+   "required": [
+    "envName",
+    "path",
+    "pattern",
+    "replacement"
+   ],
+   "slug": "replaceinbody",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeId",
+    "sourcePath",
+    "destPath"
+   ],
+   "path": "/environment/file/rest/unpackbyid",
+   "required": [
+    "destPath",
+    "envName",
+    "nodeId",
+    "sourcePath"
+   ],
+   "slug": "unpackbyid",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeType",
+    "sourcePath",
+    "destPath"
+   ],
+   "path": "/environment/file/rest/unpackbytype",
+   "required": [
+    "destPath",
+    "envName",
+    "nodeType",
+    "sourcePath"
+   ],
+   "slug": "unpackbytype",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "sourcePath",
+    "destPath",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid",
+    "overwrite"
+   ],
+   "path": "/environment/file/rest/upload",
+   "required": [
+    "destPath",
+    "envName",
+    "sourcePath"
+   ],
+   "slug": "upload",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "path",
+    "body",
+    "nodeType",
+    "nodeGroup",
+    "masterOnly",
+    "nodeid",
+    "isAppendMode"
+   ],
+   "path": "/environment/file/rest/write",
+   "required": [
+    "envName",
+    "path"
+   ],
+   "slug": "write",
+   "sub": "file"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup",
+    "targetAppid",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/attachenv",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "attachenv",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "envGroup",
+    "data",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/creategroup",
+   "required": [],
+   "slug": "creategroup",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup",
+    "targetAppid",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/detachenv",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "detachenv",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "srcGroupName",
+    "dstGroupName",
+    "data",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/editgroup",
+   "required": [
+    "srcGroupName"
+   ],
+   "slug": "editgroup",
+   "sub": "group"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "targetAppid",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/getgroups",
+   "required": [],
+   "slug": "getgroups",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "envGroup",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/removegroup",
+   "required": [
+    "envGroup"
+   ],
+   "slug": "removegroup",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "envGroup",
+    "targetAppid"
+   ],
+   "path": "/environment/group/rest/setenv",
+   "required": [
+    "envGroup",
+    "envName"
+   ],
+   "slug": "setenv",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "groupName",
+    "enabled",
+    "ownerUid"
+   ],
+   "path": "/environment/group/rest/setisolationenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "groupName"
+   ],
+   "slug": "setisolationenabled",
+   "sub": "group"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "data"
+   ],
+   "path": "/environment/nodegroup/rest/applydata",
+   "required": [
+    "data",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "applydata",
+   "sub": "nodegroup"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup"
+   ],
+   "path": "/environment/nodegroup/rest/get",
+   "required": [
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "get",
+   "sub": "nodegroup"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "enabled"
+   ],
+   "path": "/environment/nodegroup/rest/setslbaccessenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "nodeGroup"
+   ],
+   "slug": "setslbaccessenabled",
+   "sub": "nodegroup"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "rule",
+    "nodeGroup",
+    "relatedEnvName"
+   ],
+   "path": "/environment/security/rest/addrule",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "rule"
+   ],
+   "slug": "addrule",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "rules",
+    "nodeGroup",
+    "relatedEnvName"
+   ],
+   "path": "/environment/security/rest/addrules",
+   "required": [
+    "envName",
+    "nodeGroup",
+    "rules"
+   ],
+   "slug": "addrules",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "rule",
+    "relatedEnvName"
+   ],
+   "path": "/environment/security/rest/editrule",
+   "required": [
+    "envName",
+    "rule"
+   ],
+   "slug": "editrule",
+   "sub": "security"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "direction"
+   ],
+   "path": "/environment/security/rest/getrules",
+   "required": [
+    "envName"
+   ],
+   "slug": "getrules",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/security/rest/removerule",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "removerule",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "ids"
+   ],
+   "path": "/environment/security/rest/removerules",
+   "required": [
+    "envName",
+    "ids"
+   ],
+   "slug": "removerules",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "enabled"
+   ],
+   "path": "/environment/security/rest/setfirewallenabled",
+   "required": [
+    "enabled",
+    "envName"
+   ],
+   "slug": "setfirewallenabled",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "enabled"
+   ],
+   "path": "/environment/security/rest/setruleenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "id"
+   ],
+   "slug": "setruleenabled",
+   "sub": "security"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "rules",
+    "nodeGroup"
+   ],
+   "path": "/environment/security/rest/setrules",
+   "required": [
+    "envName",
+    "rules"
+   ],
+   "slug": "setrules",
+   "sub": "security"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/environment/tracking/rest/getaction",
+   "required": [],
+   "slug": "getaction",
+   "sub": "tracking"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid"
+   ],
+   "path": "/environment/tracking/rest/getcurrentactions",
+   "required": [],
+   "slug": "getcurrentactions",
+   "sub": "tracking"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid"
+   ],
+   "path": "/environment/tracking/rest/getserverutctime",
+   "required": [],
+   "slug": "getserverutctime",
+   "sub": "tracking"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "appid",
+    "count",
+    "starttime",
+    "endtime",
+    "actionTypes"
+   ],
+   "path": "/environment/tracking/rest/getuidactions",
+   "required": [],
+   "slug": "getuidactions",
+   "sub": "tracking"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "appid",
+    "search"
+   ],
+   "path": "/environment/tracking/rest/searchactions",
+   "required": [
+    "search"
+   ],
+   "slug": "searchactions",
+   "sub": "tracking"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/addautoscalingtrigger",
+   "required": [
+    "data",
+    "envName"
+   ],
+   "slug": "addautoscalingtrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/addloadalerttrigger",
+   "required": [
+    "data",
+    "envName"
+   ],
+   "slug": "addloadalerttrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/addtrigger",
+   "required": [
+    "data",
+    "envName"
+   ],
+   "slug": "addtrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "triggerId",
+    "actionTypes",
+    "startTime",
+    "endTime",
+    "startRow",
+    "resultCount",
+    "orderField",
+    "orderDirection",
+    "skipResults",
+    "nodeGroup",
+    "resourceTypes",
+    "triggerLogId"
+   ],
+   "path": "/environment/trigger/rest/autoscalinghistory",
+   "required": [
+    "envName",
+    "resultCount",
+    "startRow"
+   ],
+   "slug": "autoscalinghistory",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/trigger/rest/deleteautoscalingtrigger",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "deleteautoscalingtrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/trigger/rest/deleteloadalerttrigger",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "deleteloadalerttrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id"
+   ],
+   "path": "/environment/trigger/rest/deletetrigger",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "deletetrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/editautoscalingtrigger",
+   "required": [
+    "data",
+    "envName",
+    "id"
+   ],
+   "slug": "editautoscalingtrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/editloadalerttrigger",
+   "required": [
+    "data",
+    "envName",
+    "id"
+   ],
+   "slug": "editloadalerttrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "data"
+   ],
+   "path": "/environment/trigger/rest/edittrigger",
+   "required": [
+    "data",
+    "envName",
+    "id"
+   ],
+   "slug": "edittrigger",
+   "sub": "trigger"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "actionTypes"
+   ],
+   "path": "/environment/trigger/rest/getautoscalingtriggers",
+   "required": [
+    "envName"
+   ],
+   "slug": "getautoscalingtriggers",
+   "sub": "trigger"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "actionTypes"
+   ],
+   "path": "/environment/trigger/rest/getloadalerttriggers",
+   "required": [
+    "envName"
+   ],
+   "slug": "getloadalerttriggers",
+   "sub": "trigger"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "triggerId",
+    "actionTypes",
+    "startTime",
+    "endTime",
+    "startRow",
+    "resultCount",
+    "orderField",
+    "orderDirection",
+    "skipResults",
+    "nodeGroup",
+    "resourceTypes",
+    "triggerLogId"
+   ],
+   "path": "/environment/trigger/rest/gettriggerlogs",
+   "required": [
+    "envName",
+    "resultCount",
+    "startRow"
+   ],
+   "slug": "gettriggerlogs",
+   "sub": "trigger"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "actionTypes"
+   ],
+   "path": "/environment/trigger/rest/gettriggers",
+   "required": [
+    "envName"
+   ],
+   "slug": "gettriggers",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "triggerId",
+    "actionTypes",
+    "startTime",
+    "endTime",
+    "startRow",
+    "resultCount",
+    "orderField",
+    "orderDirection",
+    "skipResults",
+    "nodeGroup",
+    "resourceTypes",
+    "triggerLogId"
+   ],
+   "path": "/environment/trigger/rest/loadalerthistory",
+   "required": [
+    "envName",
+    "resultCount",
+    "startRow"
+   ],
+   "slug": "loadalerthistory",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "enabled"
+   ],
+   "path": "/environment/trigger/rest/setautoscalingtriggerenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "id"
+   ],
+   "slug": "setautoscalingtriggerenabled",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "enabled"
+   ],
+   "path": "/environment/trigger/rest/setloadalerttriggerenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "id"
+   ],
+   "slug": "setloadalerttriggerenabled",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "id",
+    "enabled"
+   ],
+   "path": "/environment/trigger/rest/settriggerenabled",
+   "required": [
+    "enabled",
+    "envName",
+    "id"
+   ],
+   "slug": "settriggerenabled",
+   "sub": "trigger"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "type",
+    "context",
+    "url",
+    "branch",
+    "keyId",
+    "login",
+    "password",
+    "autoupdate",
+    "interval",
+    "autoResolveConflict",
+    "zdt",
+    "updateNow",
+    "nodeGroup",
+    "hooks",
+    "delay",
+    "repoHash"
+   ],
+   "path": "/environment/vcs/rest/createproject",
+   "required": [
+    "context",
+    "envName",
+    "type",
+    "url"
+   ],
+   "slug": "createproject",
+   "sub": "vcs"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "context",
+    "nodeGroup"
+   ],
+   "path": "/environment/vcs/rest/deleteproject",
+   "required": [
+    "context",
+    "envName"
+   ],
+   "slug": "deleteproject",
+   "sub": "vcs"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "type",
+    "oldcontext",
+    "newcontext",
+    "url",
+    "branch",
+    "keyId",
+    "login",
+    "password",
+    "autoupdate",
+    "interval",
+    "autoResolveConflict",
+    "zdt",
+    "nodeGroup",
+    "hooks",
+    "delay",
+    "repoHash"
+   ],
+   "path": "/environment/vcs/rest/editproject",
+   "required": [
+    "autoResolveConflict",
+    "autoupdate",
+    "envName",
+    "newcontext",
+    "oldcontext",
+    "type",
+    "url",
+    "zdt"
+   ],
+   "slug": "editproject",
+   "sub": "vcs"
+  },
+  {
+   "class": "read",
+   "group": "environment",
+   "params": [
+    "envName",
+    "context",
+    "nodeGroup"
+   ],
+   "path": "/environment/vcs/rest/getproject",
+   "required": [
+    "envName"
+   ],
+   "slug": "getproject",
+   "sub": "vcs"
+  },
+  {
+   "class": "write",
+   "group": "environment",
+   "params": [
+    "envName",
+    "context",
+    "nodeGroup",
+    "nodeId",
+    "delay"
+   ],
+   "path": "/environment/vcs/rest/update",
+   "required": [
+    "context",
+    "envName"
+   ],
+   "slug": "update",
+   "sub": "vcs"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/iaas/credential/rest/delete",
+   "required": [
+    "id"
+   ],
+   "slug": "delete",
+   "sub": "credential"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "credential",
+    "hostGroup"
+   ],
+   "path": "/iaas/credential/rest/generate",
+   "required": [
+    "credential"
+   ],
+   "slug": "generate",
+   "sub": "credential"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup"
+   ],
+   "path": "/iaas/credential/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "credential"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId"
+   ],
+   "path": "/iaas/flavor/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "flavor"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "instanceId",
+    "instanceType",
+    "networkId",
+    "fipId",
+    "fixedIp"
+   ],
+   "path": "/iaas/floatingip/rest/assign",
+   "required": [
+    "fipId",
+    "instanceId",
+    "networkId"
+   ],
+   "slug": "assign",
+   "sub": "floatingip"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "networkId",
+    "floatingIP"
+   ],
+   "path": "/iaas/floatingip/rest/create",
+   "required": [
+    "networkId"
+   ],
+   "slug": "create",
+   "sub": "floatingip"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "floatingIP"
+   ],
+   "path": "/iaas/floatingip/rest/delete",
+   "required": [
+    "floatingIP"
+   ],
+   "slug": "delete",
+   "sub": "floatingip"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "floatingIP"
+   ],
+   "path": "/iaas/floatingip/rest/get",
+   "required": [
+    "floatingIP"
+   ],
+   "slug": "get",
+   "sub": "floatingip"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId"
+   ],
+   "path": "/iaas/floatingip/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "floatingip"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "fipId"
+   ],
+   "path": "/iaas/floatingip/rest/unassign",
+   "required": [
+    "fipId"
+   ],
+   "slug": "unassign",
+   "sub": "floatingip"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "imageId"
+   ],
+   "path": "/iaas/image/rest/delete",
+   "required": [
+    "imageId"
+   ],
+   "slug": "delete",
+   "sub": "image"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup",
+    "id"
+   ],
+   "path": "/iaas/image/rest/get",
+   "required": [
+    "id",
+    "projectId"
+   ],
+   "slug": "get",
+   "sub": "image"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid"
+   ],
+   "path": "/iaas/image/rest/getosdistros",
+   "required": [],
+   "slug": "getosdistros",
+   "sub": "image"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup",
+    "addSystem",
+    "diskFormat"
+   ],
+   "path": "/iaas/image/rest/list",
+   "required": [
+    "projectId"
+   ],
+   "slug": "list",
+   "sub": "image"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup"
+   ],
+   "path": "/iaas/image/rest/listsystemimages",
+   "required": [],
+   "slug": "listsystemimages",
+   "sub": "image"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup",
+    "osDistro",
+    "imageName",
+    "uefiCompatible"
+   ],
+   "path": "/iaas/image/rest/upload",
+   "required": [
+    "osDistro",
+    "projectId"
+   ],
+   "slug": "upload",
+   "sub": "image"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId"
+   ],
+   "path": "/iaas/lb/rest/delete",
+   "required": [
+    "lbId"
+   ],
+   "slug": "delete",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "poolId"
+   ],
+   "path": "/iaas/lb/rest/deletebalancingpool",
+   "required": [
+    "lbId",
+    "poolId"
+   ],
+   "slug": "deletebalancingpool",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "poolId",
+    "memberId"
+   ],
+   "path": "/iaas/lb/rest/deletebalancingpoolmember",
+   "required": [
+    "lbId",
+    "memberId",
+    "poolId"
+   ],
+   "slug": "deletebalancingpoolmember",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "name",
+    "description"
+   ],
+   "path": "/iaas/lb/rest/edit",
+   "required": [
+    "lbId"
+   ],
+   "slug": "edit",
+   "sub": "lb"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId"
+   ],
+   "path": "/iaas/lb/rest/get",
+   "required": [
+    "lbId"
+   ],
+   "slug": "get",
+   "sub": "lb"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "poolId"
+   ],
+   "path": "/iaas/lb/rest/getbalancingpool",
+   "required": [
+    "lbId",
+    "poolId"
+   ],
+   "slug": "getbalancingpool",
+   "sub": "lb"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "lbIds",
+    "hostGroup"
+   ],
+   "path": "/iaas/lb/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "lb"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId"
+   ],
+   "path": "/iaas/lb/rest/listbalancingpool",
+   "required": [
+    "lbId"
+   ],
+   "slug": "listbalancingpool",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "poolId",
+    "memberId",
+    "enabled"
+   ],
+   "path": "/iaas/lb/rest/setbalancingpoolmemberenabled",
+   "required": [
+    "enabled",
+    "lbId",
+    "memberId",
+    "poolId"
+   ],
+   "slug": "setbalancingpoolmemberenabled",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "lbId",
+    "enabled"
+   ],
+   "path": "/iaas/lb/rest/setenabled",
+   "required": [
+    "enabled",
+    "lbId"
+   ],
+   "slug": "setenabled",
+   "sub": "lb"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "networkId"
+   ],
+   "path": "/iaas/network/rest/attach",
+   "required": [
+    "networkId"
+   ],
+   "slug": "attach",
+   "sub": "network"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "networkId"
+   ],
+   "path": "/iaas/network/rest/delete",
+   "required": [
+    "networkId"
+   ],
+   "slug": "delete",
+   "sub": "network"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "securityGroupId",
+    "hostGroup"
+   ],
+   "path": "/iaas/network/rest/deletesecuritygroup",
+   "required": [
+    "securityGroupId"
+   ],
+   "slug": "deletesecuritygroup",
+   "sub": "network"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "portId"
+   ],
+   "path": "/iaas/network/rest/detach",
+   "required": [
+    "portId"
+   ],
+   "slug": "detach",
+   "sub": "network"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "securityGroupId"
+   ],
+   "path": "/iaas/network/rest/getvmsattachedtosecuritygroup",
+   "required": [
+    "securityGroupId"
+   ],
+   "slug": "getvmsattachedtosecuritygroup",
+   "sub": "network"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "hostGroup",
+    "networkUsageType"
+   ],
+   "path": "/iaas/network/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "network"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "securityGroupIds",
+    "hostGroup"
+   ],
+   "path": "/iaas/network/rest/listsecuritygroup",
+   "required": [],
+   "slug": "listsecuritygroup",
+   "sub": "network"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "networkId",
+    "name"
+   ],
+   "path": "/iaas/network/rest/rename",
+   "required": [
+    "name",
+    "networkId"
+   ],
+   "slug": "rename",
+   "sub": "network"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectName",
+    "description",
+    "makeDefault"
+   ],
+   "path": "/iaas/project/rest/create",
+   "required": [
+    "projectName"
+   ],
+   "slug": "create",
+   "sub": "project"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId"
+   ],
+   "path": "/iaas/project/rest/delete",
+   "required": [],
+   "slug": "delete",
+   "sub": "project"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "ownerUid"
+   ],
+   "path": "/iaas/project/rest/get",
+   "required": [],
+   "slug": "get",
+   "sub": "project"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "projectName",
+    "description",
+    "makeDefault"
+   ],
+   "path": "/iaas/project/rest/update",
+   "required": [],
+   "slug": "update",
+   "sub": "project"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "routerId"
+   ],
+   "path": "/iaas/router/rest/delete",
+   "required": [
+    "routerId"
+   ],
+   "slug": "delete",
+   "sub": "router"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "routerId",
+    "id"
+   ],
+   "path": "/iaas/router/rest/deleteinterface",
+   "required": [
+    "id",
+    "routerId"
+   ],
+   "slug": "deleteinterface",
+   "sub": "router"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "routerId",
+    "route"
+   ],
+   "path": "/iaas/router/rest/deletestaticroute",
+   "required": [
+    "route",
+    "routerId"
+   ],
+   "slug": "deletestaticroute",
+   "sub": "router"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "externalId"
+   ],
+   "path": "/iaas/router/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "router"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/actions",
+   "required": [],
+   "slug": "actions",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "networkData"
+   ],
+   "path": "/iaas/vm/rest/addnetwork",
+   "required": [
+    "networkData"
+   ],
+   "slug": "addnetwork",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "vm"
+   ],
+   "path": "/iaas/vm/rest/create",
+   "required": [
+    "vm"
+   ],
+   "slug": "create",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/delete",
+   "required": [],
+   "slug": "delete",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "networkData"
+   ],
+   "path": "/iaas/vm/rest/editnetwork",
+   "required": [
+    "networkData"
+   ],
+   "slug": "editnetwork",
+   "sub": "vm"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "projectId",
+    "vmId",
+    "hostGroup"
+   ],
+   "path": "/iaas/vm/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/remoteconsole",
+   "required": [],
+   "slug": "remoteconsole",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "networkId",
+    "uuid"
+   ],
+   "path": "/iaas/vm/rest/removenetwork",
+   "required": [
+    "networkId",
+    "uuid"
+   ],
+   "slug": "removenetwork",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "imageId",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/rescue",
+   "required": [
+    "imageId"
+   ],
+   "slug": "rescue",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "isHard"
+   ],
+   "path": "/iaas/vm/rest/restart",
+   "required": [],
+   "slug": "restart",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "adminPassword"
+   ],
+   "path": "/iaas/vm/rest/setadminpassword",
+   "required": [
+    "adminPassword"
+   ],
+   "slug": "setadminpassword",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "vmDescription"
+   ],
+   "path": "/iaas/vm/rest/setdescription",
+   "required": [],
+   "slug": "setdescription",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "flavorId",
+    "forceRestart"
+   ],
+   "path": "/iaas/vm/rest/setflavor",
+   "required": [
+    "flavorId"
+   ],
+   "slug": "setflavor",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "vmName"
+   ],
+   "path": "/iaas/vm/rest/setname",
+   "required": [
+    "vmName"
+   ],
+   "slug": "setname",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "isHard"
+   ],
+   "path": "/iaas/vm/rest/shelve",
+   "required": [],
+   "slug": "shelve",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/start",
+   "required": [],
+   "slug": "start",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "isHard"
+   ],
+   "path": "/iaas/vm/rest/stop",
+   "required": [],
+   "slug": "stop",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId"
+   ],
+   "path": "/iaas/vm/rest/unrescue",
+   "required": [],
+   "slug": "unrescue",
+   "sub": "vm"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "volumeId"
+   ],
+   "path": "/iaas/volume/rest/attach",
+   "required": [
+    "volumeId"
+   ],
+   "slug": "attach",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId"
+   ],
+   "path": "/iaas/volume/rest/available",
+   "required": [],
+   "slug": "available",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "name",
+    "policy",
+    "size"
+   ],
+   "path": "/iaas/volume/rest/create",
+   "required": [
+    "hostGroup",
+    "name",
+    "policy",
+    "projectId",
+    "size"
+   ],
+   "slug": "create",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId",
+    "name",
+    "policy",
+    "size",
+    "imageSourceId"
+   ],
+   "path": "/iaas/volume/rest/createfromimage",
+   "required": [
+    "hostGroup",
+    "imageSourceId",
+    "name",
+    "policy",
+    "projectId",
+    "size"
+   ],
+   "slug": "createfromimage",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "name",
+    "snapshotId"
+   ],
+   "path": "/iaas/volume/rest/createfromsnapshot",
+   "required": [
+    "name",
+    "snapshotId"
+   ],
+   "slug": "createfromsnapshot",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId"
+   ],
+   "path": "/iaas/volume/rest/delete",
+   "required": [
+    "volumeId"
+   ],
+   "slug": "delete",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vmId",
+    "volumeId"
+   ],
+   "path": "/iaas/volume/rest/detach",
+   "required": [
+    "volumeId"
+   ],
+   "slug": "detach",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId",
+    "size"
+   ],
+   "path": "/iaas/volume/rest/extend",
+   "required": [
+    "size",
+    "volumeId"
+   ],
+   "slug": "extend",
+   "sub": "volume"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId"
+   ],
+   "path": "/iaas/volume/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId",
+    "name"
+   ],
+   "path": "/iaas/volume/rest/rename",
+   "required": [
+    "name",
+    "volumeId"
+   ],
+   "slug": "rename",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId",
+    "snapshotId"
+   ],
+   "path": "/iaas/volume/rest/revert",
+   "required": [
+    "snapshotId",
+    "volumeId"
+   ],
+   "slug": "revert",
+   "sub": "volume"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId",
+    "name",
+    "description"
+   ],
+   "path": "/iaas/volumesnapshot/rest/create",
+   "required": [
+    "name",
+    "volumeId"
+   ],
+   "slug": "create",
+   "sub": "volumesnapshot"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "snapshotId"
+   ],
+   "path": "/iaas/volumesnapshot/rest/delete",
+   "required": [
+    "snapshotId"
+   ],
+   "slug": "delete",
+   "sub": "volumesnapshot"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "volumeId"
+   ],
+   "path": "/iaas/volumesnapshot/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "volumesnapshot"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "snapshotId",
+    "name"
+   ],
+   "path": "/iaas/volumesnapshot/rest/rename",
+   "required": [
+    "snapshotId"
+   ],
+   "slug": "rename",
+   "sub": "volumesnapshot"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "snapshotId",
+    "imageName"
+   ],
+   "path": "/iaas/volumesnapshot/rest/uploadtoimage",
+   "required": [
+    "imageName",
+    "snapshotId"
+   ],
+   "slug": "uploadtoimage",
+   "sub": "volumesnapshot"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vpnId"
+   ],
+   "path": "/iaas/vpn/rest/delete",
+   "required": [
+    "vpnId"
+   ],
+   "slug": "delete",
+   "sub": "vpn"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vpnId"
+   ],
+   "path": "/iaas/vpn/rest/get",
+   "required": [
+    "vpnId"
+   ],
+   "slug": "get",
+   "sub": "vpn"
+  },
+  {
+   "class": "read",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "hostGroup",
+    "projectId"
+   ],
+   "path": "/iaas/vpn/rest/list",
+   "required": [],
+   "slug": "list",
+   "sub": "vpn"
+  },
+  {
+   "class": "write",
+   "group": "iaas",
+   "params": [
+    "appid",
+    "vpnId"
+   ],
+   "path": "/iaas/vpn/rest/restart",
+   "required": [
+    "vpnId"
+   ],
+   "slug": "restart",
+   "sub": "vpn"
+  },
+  {
+   "class": "read",
+   "group": "management",
+   "params": [
+    "appid",
+    "isPrivate"
+   ],
+   "path": "/management/account/rest/getsshkeys",
+   "required": [
+    "isPrivate"
+   ],
+   "slug": "getsshkeys",
+   "sub": "account"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "manifest"
+   ],
+   "path": "/marketplace/app/rest/addapp",
+   "required": [
+    "manifest"
+   ],
+   "slug": "addapp",
+   "sub": "app"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/marketplace/app/rest/deleteapp",
+   "required": [
+    "id"
+   ],
+   "slug": "deleteapp",
+   "sub": "app"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id",
+    "manifest"
+   ],
+   "path": "/marketplace/app/rest/editapp",
+   "required": [
+    "id",
+    "manifest"
+   ],
+   "slug": "editapp",
+   "sub": "app"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "envName",
+    "nodeGroup",
+    "search",
+    "lang"
+   ],
+   "path": "/marketplace/app/rest/getaddonlist",
+   "required": [
+    "envName"
+   ],
+   "slug": "getaddonlist",
+   "sub": "app"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id",
+    "lang",
+    "ownerUid"
+   ],
+   "path": "/marketplace/app/rest/getappinfo",
+   "required": [
+    "id"
+   ],
+   "slug": "getappinfo",
+   "sub": "app"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/app/rest/getcategories",
+   "required": [],
+   "slug": "getcategories",
+   "sub": "app"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/app/rest/getchecksum",
+   "required": [],
+   "slug": "getchecksum",
+   "sub": "app"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "search",
+    "lang",
+    "checksum"
+   ],
+   "path": "/marketplace/app/rest/getlist",
+   "required": [],
+   "slug": "getlist",
+   "sub": "app"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id",
+    "envName",
+    "settings",
+    "displayName",
+    "region",
+    "envGroups",
+    "ownerUid",
+    "nodes",
+    "overrideNodes",
+    "skipEmail",
+    "skipNodeEmails"
+   ],
+   "path": "/marketplace/app/rest/install",
+   "required": [
+    "id"
+   ],
+   "slug": "install",
+   "sub": "app"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "envName",
+    "id",
+    "settings",
+    "nodeGroup",
+    "skipEmail"
+   ],
+   "path": "/marketplace/app/rest/installaddon",
+   "required": [
+    "envName",
+    "id"
+   ],
+   "slug": "installaddon",
+   "sub": "app"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/console/rest/clearlog",
+   "required": [],
+   "slug": "clearlog",
+   "sub": "console"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/console/rest/readlog",
+   "required": [],
+   "slug": "readlog",
+   "sub": "console"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "message"
+   ],
+   "path": "/marketplace/console/rest/writelog",
+   "required": [
+    "message"
+   ],
+   "slug": "writelog",
+   "sub": "console"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/marketplace/favorite/rest/add",
+   "required": [
+    "id"
+   ],
+   "slug": "add",
+   "sub": "favorite"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "manifest"
+   ],
+   "path": "/marketplace/favorite/rest/addmanifest",
+   "required": [
+    "manifest"
+   ],
+   "slug": "addmanifest",
+   "sub": "favorite"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/marketplace/favorite/rest/delete",
+   "required": [
+    "id"
+   ],
+   "slug": "delete",
+   "sub": "favorite"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "search",
+    "lang",
+    "checksum"
+   ],
+   "path": "/marketplace/favorite/rest/getlist",
+   "required": [],
+   "slug": "getlist",
+   "sub": "favorite"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "action",
+    "settingsId",
+    "params",
+    "lang"
+   ],
+   "path": "/marketplace/installation/rest/executeaction",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "executeaction",
+   "sub": "installation"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName"
+   ],
+   "path": "/marketplace/installation/rest/getenvappid",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "getenvappid",
+   "sub": "installation"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName"
+   ],
+   "path": "/marketplace/installation/rest/getinfo",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "getinfo",
+   "sub": "installation"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/installation/rest/getscriptingappid",
+   "required": [],
+   "slug": "getscriptingappid",
+   "sub": "installation"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "settingsId",
+    "lang"
+   ],
+   "path": "/marketplace/installation/rest/getsettings",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "getsettings",
+   "sub": "installation"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "force"
+   ],
+   "path": "/marketplace/installation/rest/uninstall",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "uninstall",
+   "sub": "installation"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "action",
+    "settingsId",
+    "params",
+    "lang"
+   ],
+   "path": "/marketplace/jps/rest/executeappaction",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "executeappaction",
+   "sub": "jps"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "jps",
+    "lang",
+    "ownerUid",
+    "auth"
+   ],
+   "path": "/marketplace/jps/rest/getappinfo",
+   "required": [],
+   "slug": "getappinfo",
+   "sub": "jps"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "settingsId",
+    "lang"
+   ],
+   "path": "/marketplace/jps/rest/getappsettings",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "getappsettings",
+   "sub": "jps"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/jps/rest/getengineversion",
+   "required": [],
+   "slug": "getengineversion",
+   "sub": "jps"
+  },
+  {
+   "class": "read",
+   "group": "marketplace",
+   "params": [
+    "appid"
+   ],
+   "path": "/marketplace/jps/rest/getscriptingappid",
+   "required": [],
+   "slug": "getscriptingappid",
+   "sub": "jps"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "jps",
+    "envName",
+    "settings",
+    "nodeGroup",
+    "displayName",
+    "region",
+    "envGroups",
+    "ownerUid",
+    "logsPath",
+    "loggerName",
+    "writeOutputTasks",
+    "skipNodeEmails",
+    "auth"
+   ],
+   "path": "/marketplace/jps/rest/install",
+   "required": [
+    "jps"
+   ],
+   "slug": "install",
+   "sub": "jps"
+  },
+  {
+   "class": "write",
+   "group": "marketplace",
+   "params": [
+    "appid",
+    "appUniqueName",
+    "force"
+   ],
+   "path": "/marketplace/jps/rest/uninstall",
+   "required": [
+    "appUniqueName"
+   ],
+   "slug": "uninstall",
+   "sub": "jps"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid"
+   ],
+   "path": "/users/account/rest/getuserinfo",
+   "required": [],
+   "slug": "getuserinfo",
+   "sub": "account"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "email",
+    "lang"
+   ],
+   "path": "/users/account/rest/recoverpassword",
+   "required": [
+    "email"
+   ],
+   "slug": "recoverpassword",
+   "sub": "account"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "password",
+    "description",
+    "tokenTemplate",
+    "apiList",
+    "expiresAt"
+   ],
+   "path": "/users/authentication/rest/createtoken",
+   "required": [
+    "description"
+   ],
+   "slug": "createtoken",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "ids",
+    "password"
+   ],
+   "path": "/users/authentication/rest/deletetokens",
+   "required": [
+    "ids"
+   ],
+   "slug": "deletetokens",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "id",
+    "password",
+    "description",
+    "tokenTemplate",
+    "apiList",
+    "expiresAt"
+   ],
+   "path": "/users/authentication/rest/edittoken",
+   "required": [
+    "id"
+   ],
+   "slug": "edittoken",
+   "sub": "authentication"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "uniqueName"
+   ],
+   "path": "/users/authentication/rest/getpolicymethods",
+   "required": [],
+   "slug": "getpolicymethods",
+   "sub": "authentication"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid"
+   ],
+   "path": "/users/authentication/rest/getsessions",
+   "required": [],
+   "slug": "getsessions",
+   "sub": "authentication"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "showPrivate",
+    "sortParam"
+   ],
+   "path": "/users/authentication/rest/gettokenapilist",
+   "required": [],
+   "slug": "gettokenapilist",
+   "sub": "authentication"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "ids"
+   ],
+   "path": "/users/authentication/rest/gettokens",
+   "required": [],
+   "slug": "gettokens",
+   "sub": "authentication"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [],
+   "path": "/users/authentication/rest/gettokentemplates",
+   "required": [],
+   "slug": "gettokentemplates",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "id",
+    "password"
+   ],
+   "path": "/users/authentication/rest/regeneratetoken",
+   "required": [
+    "id"
+   ],
+   "slug": "regeneratetoken",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "login",
+    "password"
+   ],
+   "path": "/users/authentication/rest/signin",
+   "required": [
+    "login",
+    "password"
+   ],
+   "slug": "signin",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid"
+   ],
+   "path": "/users/authentication/rest/signout",
+   "required": [],
+   "slug": "signout",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "ids"
+   ],
+   "path": "/users/authentication/rest/signoutsessions",
+   "required": [
+    "ids"
+   ],
+   "slug": "signoutsessions",
+   "sub": "authentication"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/acceptcollaboration",
+   "required": [
+    "id"
+   ],
+   "slug": "acceptcollaboration",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/activatemember",
+   "required": [
+    "id"
+   ],
+   "slug": "activatemember",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "name",
+    "methods",
+    "description"
+   ],
+   "path": "/users/collaboration/rest/addpolicy",
+   "required": [
+    "methods",
+    "name"
+   ],
+   "slug": "addpolicy",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "resources",
+    "createRoleIfNeeded"
+   ],
+   "path": "/users/collaboration/rest/addresources",
+   "required": [
+    "collaborationId",
+    "resources"
+   ],
+   "slug": "addresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "name",
+    "description",
+    "policies",
+    "receiveNotification"
+   ],
+   "path": "/users/collaboration/rest/addrole",
+   "required": [
+    "name",
+    "policies",
+    "receiveNotification"
+   ],
+   "slug": "addrole",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "serviceMethod",
+    "isAny"
+   ],
+   "path": "/users/collaboration/rest/checkenvironmentrights",
+   "required": [
+    "serviceMethod"
+   ],
+   "slug": "checkenvironmentrights",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/deletemember",
+   "required": [
+    "id"
+   ],
+   "slug": "deletemember",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/deletepolicy",
+   "required": [
+    "id"
+   ],
+   "slug": "deletepolicy",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "projectId"
+   ],
+   "path": "/users/collaboration/rest/deleteprojectfromresources",
+   "required": [
+    "projectId"
+   ],
+   "slug": "deleteprojectfromresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "ids"
+   ],
+   "path": "/users/collaboration/rest/deleteresources",
+   "required": [
+    "collaborationId",
+    "ids"
+   ],
+   "slug": "deleteresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/deleterole",
+   "required": [
+    "id"
+   ],
+   "slug": "deleterole",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "displayName"
+   ],
+   "path": "/users/collaboration/rest/editcollaboration",
+   "required": [
+    "id"
+   ],
+   "slug": "editcollaboration",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "displayName",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/editmember",
+   "required": [
+    "id"
+   ],
+   "slug": "editmember",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "name",
+    "methods",
+    "description"
+   ],
+   "path": "/users/collaboration/rest/editpolicy",
+   "required": [
+    "id",
+    "methods"
+   ],
+   "slug": "editpolicy",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "name",
+    "description",
+    "policies",
+    "receiveNotification"
+   ],
+   "path": "/users/collaboration/rest/editrole",
+   "required": [
+    "id",
+    "policies"
+   ],
+   "slug": "editrole",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "resourceId",
+    "resourceType"
+   ],
+   "path": "/users/collaboration/rest/getcollaborationresourcemethods",
+   "required": [
+    "resourceId",
+    "resourceType"
+   ],
+   "slug": "getcollaborationresourcemethods",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "type",
+    "resourceGroup"
+   ],
+   "path": "/users/collaboration/rest/getcollaborationresources",
+   "required": [],
+   "slug": "getcollaborationresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "roleId"
+   ],
+   "path": "/users/collaboration/rest/getcollaborationrolemethods",
+   "required": [],
+   "slug": "getcollaborationrolemethods",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid",
+    "collaborationType"
+   ],
+   "path": "/users/collaboration/rest/getcollaborations",
+   "required": [],
+   "slug": "getcollaborations",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "memberId",
+    "resourceGroup"
+   ],
+   "path": "/users/collaboration/rest/getmemberresources",
+   "required": [],
+   "slug": "getmemberresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/getmembers",
+   "required": [],
+   "slug": "getmembers",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/getpolicies",
+   "required": [],
+   "slug": "getpolicies",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "policyId"
+   ],
+   "path": "/users/collaboration/rest/getpolicymethods",
+   "required": [],
+   "slug": "getpolicymethods",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "resourceId",
+    "resourceType",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/getresourceroles",
+   "required": [
+    "resourceId"
+   ],
+   "slug": "getresourceroles",
+   "sub": "collaboration"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/getroles",
+   "required": [],
+   "slug": "getroles",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "email",
+    "displayName",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/invitemember",
+   "required": [
+    "email"
+   ],
+   "slug": "invitemember",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/leavecollaboration",
+   "required": [
+    "id"
+   ],
+   "slug": "leavecollaboration",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id"
+   ],
+   "path": "/users/collaboration/rest/rejectcollaboration",
+   "required": [
+    "id"
+   ],
+   "slug": "rejectcollaboration",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/resendmemberinvitation",
+   "required": [
+    "id"
+   ],
+   "slug": "resendmemberinvitation",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "resourceId",
+    "resourceType",
+    "roleIds",
+    "ownerUid",
+    "createRoleIfNeeded"
+   ],
+   "path": "/users/collaboration/rest/setresource",
+   "required": [
+    "collaborationId",
+    "resourceId",
+    "roleIds"
+   ],
+   "slug": "setresource",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "collaborationId",
+    "resources",
+    "createRoleIfNeeded"
+   ],
+   "path": "/users/collaboration/rest/setresources",
+   "required": [
+    "collaborationId",
+    "resources"
+   ],
+   "slug": "setresources",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "id",
+    "ownerUid"
+   ],
+   "path": "/users/collaboration/rest/suspendmember",
+   "required": [
+    "id"
+   ],
+   "slug": "suspendmember",
+   "sub": "collaboration"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "name"
+   ],
+   "path": "/users/team/rest/create",
+   "required": [
+    "name"
+   ],
+   "slug": "create",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "teamId"
+   ],
+   "path": "/users/team/rest/delete",
+   "required": [
+    "teamId"
+   ],
+   "slug": "delete",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "memberId"
+   ],
+   "path": "/users/team/rest/deletemember",
+   "required": [
+    "memberId"
+   ],
+   "slug": "deletemember",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "teamId",
+    "name",
+    "externalId"
+   ],
+   "path": "/users/team/rest/edit",
+   "required": [
+    "teamId"
+   ],
+   "slug": "edit",
+   "sub": "team"
+  },
+  {
+   "class": "read",
+   "group": "users",
+   "params": [
+    "appid"
+   ],
+   "path": "/users/team/rest/get",
+   "required": [],
+   "slug": "get",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "email",
+    "displayName",
+    "teamId"
+   ],
+   "path": "/users/team/rest/invite",
+   "required": [
+    "email",
+    "teamId"
+   ],
+   "slug": "invite",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "memberId"
+   ],
+   "path": "/users/team/rest/resendinvite",
+   "required": [
+    "memberId"
+   ],
+   "slug": "resendinvite",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid",
+    "ownerUid"
+   ],
+   "path": "/users/team/rest/setdefaultteamowner",
+   "required": [
+    "ownerUid"
+   ],
+   "slug": "setdefaultteamowner",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "users",
+   "params": [
+    "appid"
+   ],
+   "path": "/users/team/rest/unsetdefaultteamowner",
+   "required": [],
+   "slug": "unsetdefaultteamowner",
+   "sub": "team"
+  },
+  {
+   "class": "write",
+   "group": "utils",
+   "params": [
+    "script",
+    "trigger",
+    "description",
+    "params"
+   ],
+   "path": "/utils/scheduler/rest/createaccounttask",
+   "required": [
+    "script",
+    "trigger"
+   ],
+   "slug": "createaccounttask",
+   "sub": "scheduler"
+  },
+  {
+   "class": "write",
+   "group": "utils",
+   "params": [
+    "envName",
+    "script",
+    "trigger",
+    "description",
+    "params"
+   ],
+   "path": "/utils/scheduler/rest/createenvtask",
+   "required": [
+    "script",
+    "trigger"
+   ],
+   "slug": "createenvtask",
+   "sub": "scheduler"
+  },
+  {
+   "class": "write",
+   "group": "utils",
+   "params": [
+    "ids"
+   ],
+   "path": "/utils/scheduler/rest/deletetasks",
+   "required": [
+    "ids"
+   ],
+   "slug": "deletetasks",
+   "sub": "scheduler"
+  },
+  {
+   "class": "write",
+   "group": "utils",
+   "params": [
+    "script",
+    "trigger",
+    "id",
+    "description",
+    "params"
+   ],
+   "path": "/utils/scheduler/rest/edittask",
+   "required": [
+    "id",
+    "script",
+    "trigger"
+   ],
+   "slug": "edittask",
+   "sub": "scheduler"
+  },
+  {
+   "class": "read",
+   "group": "utils",
+   "params": [
+    "ids"
+   ],
+   "path": "/utils/scheduler/rest/gettasks",
+   "required": [],
+   "slug": "gettasks",
+   "sub": "scheduler"
+  }
+ ],
+ "source": "docs.jelastic.com (live OpenAPI document)",
+ "spec_version": "8.15"
+}

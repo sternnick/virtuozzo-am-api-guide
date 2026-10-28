@@ -59,7 +59,8 @@ export VZ_TOKEN="..."                        # Settings -> Access Tokens -> Gene
 ./tools/vz-api.sh /users/account/rest/getuserinfo         # who am I
 ./tools/vz-api.sh /environment/control/rest/getenvs       # what exists
 ./tools/vz-capability-scan.sh > capability.tsv            # what this token can actually reach
-./tools/vz-api.sh /environment/control/rest/stopenv       # refuses, and explains why
+./scripts/environment/control/getenvinfo.sh envName=...   # generated per-method wrapper
+./scripts/environment/control/stopenv.sh envName=...       # refuses, and explains why
 ```
 
 Every tool is `curl` plus `jq` plus bash. No SDK install, no vendor PHP client, no API key in a
@@ -78,6 +79,9 @@ config file: the token is read from `VZ_TOKEN` and never written to disk.
 | [tools/vz-api.sh](tools/vz-api.sh) | the safe client: query encoding, result decoding, verb guard |
 | [tools/vz-capability-scan.sh](tools/vz-capability-scan.sh) | classify every read-only method for one token |
 | [tools/spec-verbs.py](tools/spec-verbs.py) | extract the endpoint catalogue and its verb histogram from the vendor OpenAPI spec |
+| [tools/gen-scripts.py](tools/gen-scripts.py) | generate (or CI-verify) one wrapper per Platform API method |
+| [scripts/](scripts/README.md) | the generated suite: every documented method callable as `scripts/<group>/<sub>/<slug>.sh key=value` |
+| [docs/07-the-script-suite.md](docs/07-the-script-suite.md) | how the generated wrappers guard, dry-run, and stay consistent |
 | [tools/check-redaction.py](tools/check-redaction.py) | publish gate: refuse to commit a hostname or a token-shaped string |
 | [examples/python-client.py](examples/python-client.py) | a ~60-line Python client with the same guard |
 | [examples/env-inventory.py](examples/env-inventory.py) | flatten `getenvs` into a small, shareable inventory (JSON or TSV) |

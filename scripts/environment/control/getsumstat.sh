@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Virtuozzo Application Management Platform API method wrapper (generated).
+# path:     /environment/control/rest/getsumstat
+# class:    read
+# spec:     8.15 (tools/gen-scripts.py - do not edit; regenerate instead)
+# required: duration, envName
+# optional: endtime
+#
+# Usage:  VZ_HOST=app.<platform> VZ_TOKEN=*** \
+#           scripts/environment/control/getsumstat.sh duration=<value> envName=<value> [--dry-run]
+# --dry-run prints the exact request without sending it.
+# Write-class methods are refused by tools/vz-api.sh unless VZ_ALLOW_DESTRUCTIVE=1.
+set -euo pipefail
+exec "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"/scripts/lib/method.sh \
+  /environment/control/rest/getsumstat "duration envName" "$@"

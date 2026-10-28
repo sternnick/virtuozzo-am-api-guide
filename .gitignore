@@ -10,6 +10,9 @@ __pycache__/
 *.pyc
 .DS_Store
 
+!data/api-catalog.json
+!scripts/index.tsv
+
 # Never, in any form
 token
 token.txt
@@ -17,3 +20,7 @@ token.txt
 secrets/
 *.pem
 *.key
+
+# local copies of the vendor spec (never committed: redaction-hostile prose)
+vendor-api.json
+api_*.json
